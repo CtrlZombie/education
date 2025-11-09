@@ -1,0 +1,43 @@
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 50px 60px;
+    background: #181616;
+}
+
+.header.container {
+
+}
+
+.header.container.menu-and-logo {
+
+}
+
+.header.container.menu-and-logo.menu {
+
+}
+
+.header.container.menu-and-logo.logo {
+
+}
+
+.header.container.nav.nav-item {
+
+}
+
+.header.container.header-actions {
+
+}
+
+.header.container.header-actions.icon {
+
+}
+
+.header.container.header-actions.icon.favourite-icon {
+
+}
+
+.header.container.header-actions.icon.cart-icon {
+
+}
