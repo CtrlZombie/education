@@ -12,10 +12,11 @@ const Posts = () => {
     const fetchPosts = async () => {
       try {
         setLoading(true);
+        setError(null);
         const response = await fetch('https://jsonplaceholder.typicode.com/posts');
         
         if (!response.ok) {
-          throw new Error('Ошибка загрузки постов');
+          throw new Error(`Ошибка ${response.status}: Не удалось загрузить посты`);
         }
         
         const data = await response.json();
@@ -40,14 +41,30 @@ const Posts = () => {
 
   if (error) {
     return (
-      <div style={{ 
-        backgroundColor: '#f8d7da', 
-        color: '#721c24', 
-        padding: '1rem',
-        borderRadius: '4px',
-        marginBottom: '1rem'
-      }}>
-        Ошибка: {error}
+      <div>
+        <div style={{ 
+          backgroundColor: '#f8d7da', 
+          color: '#721c24', 
+          padding: '1rem',
+          borderRadius: '4px',
+          marginBottom: '1rem'
+        }}>
+          <h3 style={{ margin: '0 0 0.5rem 0' }}>Ошибка загрузки постов</h3>
+          <p style={{ margin: 0 }}>{error}</p>
+        </div>
+        <button 
+          onClick={() => window.location.reload()}
+          style={{
+            backgroundColor: '#007bff',
+            color: 'white',
+            border: 'none',
+            padding: '0.5rem 1rem',
+            borderRadius: '4px',
+            cursor: 'pointer'
+          }}
+        >
+          Попробовать снова
+        </button>
       </div>
     );
   }

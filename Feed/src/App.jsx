@@ -24,6 +24,7 @@ const router = createBrowserRouter([
       {
         path: 'posts/:id',
         element: <PostDetail />,
+        errorElement: <div>Ошибка загрузки поста</div>,
       },
     ],
   },
